@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class user extends Model
 {
     use HasFactory;
-    protected $fillable=['name','email','password'];
+    protected $fillable = ['name', 'email', 'password'];
+
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class Home extends Controller
 {
     //
-function dashboard(){
-    return view('dashboard');
-}
+    function dashboard()
+    {
 
-function login(){
-    return view('login');
-}
+        $data = Post::all();
+        return view('dashboard', compact('data'));
+    }
 
-function register(){
-    return view('register');
-}
+    function login()
+    {
+        return view('login');
+    }
 
+    function register()
+    {
+        return view('register');
+    }
 }
