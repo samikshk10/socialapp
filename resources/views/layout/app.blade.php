@@ -32,9 +32,11 @@
         
       </ul>
       @auth
+      <div class="d-flex align-item-center justify-content-center" style="gap: 20px">
      <h3> <a  class="nav-link " aria-current="page" href="{{route('login')}}">{{auth()->user()->name}}</a></h3>
 
      <button class="btn btn-secondary"><a href="{{ route('logout') }} " style="color: white">Logout</a></button>  
+    </div>
       @endauth   
     </div>
   </div>
