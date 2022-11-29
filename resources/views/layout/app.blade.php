@@ -40,6 +40,7 @@
       @endauth   
     </div>
   </div>
+  
 </nav>
 
     <!-- dyanmic content -->
