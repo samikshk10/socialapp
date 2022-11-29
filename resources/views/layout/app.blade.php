@@ -37,7 +37,9 @@
      <button class="btn btn-secondary"><a href="{{ route('logout') }} " style="color: white">Logout</a></button>  
       @endauth   
     </div>
+
     
+
   </div>
 </nav>
 
