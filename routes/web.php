@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +16,17 @@ use App\Http\Controllers\registerController;
 |
 */
 
-Route::get('/',[home::class,'dashboard'])->name('dashboard')->middleware(['auth']);
+Route::get('/', [home::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
+Route::get('/addnew', [home::class, 'add'])->name('addnew');
 
-Route::get('/login',[home::class,'login'])->name('login');
-Route::post('/login',[registerController::class,'loginuser'])->name('loginuser');
+Route::post('/addnew', [PostController::class, 'addpost'])->name('addposts');
 
-Route::get('/register',[home::class,'register'])->name('register');
-Route::post('/register',[registerController::class,'registeruser'])->name('registeruser');
+Route::get('/login', [home::class, 'login'])->name('login');
+Route::post('/login', [registerController::class, 'loginuser'])->name('loginuser');
 
-
-Route::get('/logout',[registerController::class,'logout'])->name('logout');
-
+Route::get('/register', [home::class, 'register'])->name('register');
+Route::post('/register', [registerController::class, 'registeruser'])->name('registeruser');
 
 
+Route::get('/logout', [registerController::class, 'logout'])->name('logout');
+Route::get('/delete/{id}', [PostController::class, 'delete'])->middleware(['auth']);

@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
 
-<div class="container  p-3 mb-5 mt-5 bg-body rounded" style="width:500px; box-shadow: 7px 7px 14px #868686 , -7px -7px 14px #fff;padding: 20px 40px">
+<div class="container  mb-5 mt-5 bg-body rounded" style="width:500px; box-shadow: 7px 7px 14px #868686 , -7px -7px 14px #fff;padding: 40px 60px">
 
   <h2 class="text-center">LOGIN</h2>
   @if(Session::has('fail'))
